@@ -16,8 +16,14 @@ class Task07 {
         if (s.length()==0) return "";
         List word = s.split(" ")
         def res = []
-        for ( def w in word ){       
-            res << (int) w[0] + w[-1] + w[2..-2] + w[1]
+        for ( def w in word ){
+            if (w.length() <= 2){
+                if (w.length() <= 1) { res << (int) w[0] }
+                else {res << (int) w[0] + w[1]}
+            }
+            else {     
+                res << (int) w[0] + w[-1] + w[2..-2] + w[1]
+            }
         }
         return res.join(" ")
     }
