@@ -8,6 +8,7 @@ package groovylab
 
 class Task10 {
     public static String urlText(String url) {
-        throw UnsupportedOperationException('Not Implemented!')
+        def getcontent = new URL(url).openConnection()
+        return getcontent.getContent().getText()
     }
 }

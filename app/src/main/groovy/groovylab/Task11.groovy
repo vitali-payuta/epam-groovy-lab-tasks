@@ -11,6 +11,12 @@ class Task11 {
     private static final String GSTRING_TEMPLATE = "1() 2() 3()"
 
     public static String gstring(String text, int num) {
-        throw UnsupportedOperationException('Not Implemented!')
+         def res = []
+         List temp = GSTRING_TEMPLATE.split(" ")
+         if (temp.size() < num)
+             return "OUT off range template"
+         for(int x = 1; x <= temp.size(); x++)
+             x == num ? res.add(x.toString() + "(" + text + ")") : res.add(x.toString() + "()")  
+         return res.join(" ")
     }
 }

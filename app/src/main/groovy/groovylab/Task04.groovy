@@ -8,6 +8,8 @@ package groovylab
 
 class Task04 {
     public static int fib(int n) {
-        throw UnsupportedOperationException('Not Implemented!')
+    	def a = 0, b= 1;
+      	n.times{ (a,b) = [b,a+b] }
+        return a
     }
 }
